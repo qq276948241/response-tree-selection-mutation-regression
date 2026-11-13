@@ -1,0 +1,63 @@
+{
+  "values": [
+    {"path": "$.status", "type": "String", "value": "ok"},
+    {"path": "$['request.id']", "type": "String", "value": "req-7f3a-2026"},
+    {"path": "$.meta.page", "type": "Numeric", "value": 1},
+    {"path": "$.meta.per_page", "type": "Numeric", "value": 20},
+    {"path": "$.meta.total", "type": "Numeric", "value": 5},
+    {"path": "$.meta.shard_id", "type": "Numeric", "source": "9007199254740993"},
+    {"path": "$.meta.trace", "type": "String", "value": "αβγ-日本語-🚀"},
+    {"path": "$.meta.greeting", "type": "String", "value": "line1\nline2\t\"quoted\" \\backslash"},
+    {"path": "$.records[0].id", "type": "String", "value": "REC-001"},
+    {"path": "$.records[0].amount", "type": "Numeric", "value": 120.5},
+    {"path": "$.records[0].customer.name", "type": "String", "value": "Ada \"Ace\" Lovelace"},
+    {"path": "$.records[0].customer.vip", "type": "Bool", "value": true},
+    {"path": "$.records[0].discount", "type": "Null"},
+    {"path": "$.records[0].note", "type": "String", "value": "送货地址：上海市"},
+    {"path": "$.records[0].tags[0]", "type": "String", "value": "priority"},
+    {"path": "$.records[0].tags[1]", "type": "String", "value": "export"},
+    {"path": "$.records[1].id", "type": "String", "value": "REC-002"},
+    {"path": "$.records[1].amount", "type": "Numeric", "value": 75},
+    {"path": "$.records[1].discount", "type": "Numeric", "value": 0.1},
+    {"path": "$.records[1].customer.vip", "type": "Bool", "value": false},
+    {"path": "$.records[2].id", "type": "String", "value": "REC-003"},
+    {"path": "$.records[2].kind", "type": "String", "value": "refund"},
+    {"path": "$.records[2].discount", "type": "Null"},
+    {"path": "$.records[3].id", "type": "String", "value": "REC-004"},
+    {"path": "$.records[3].amount", "type": "Numeric", "value": 210.75},
+    {"path": "$.records[3].note", "type": "String", "value": ""},
+    {"path": "$.records[4].id", "type": "String", "value": "REC-005"},
+    {"path": "$.records[4].amount", "type": "Numeric", "value": 999},
+    {"path": "$.records[4].customer.name", "type": "String", "value": "Émile"},
+    {"path": "$.records[4].discount", "type": "Null"},
+    {"path": "$.mixed[0]", "type": "Numeric", "value": 1},
+    {"path": "$.mixed[1]", "type": "String", "value": "two"},
+    {"path": "$.mixed[2]", "type": "Null"},
+    {"path": "$.mixed[3]", "type": "Bool", "value": true},
+    {"path": "$.mixed[4]['nested.key'][2].deep", "type": "String", "value": "値"},
+    {"path": "$.mixed[5][0]", "type": "Numeric", "value": 1},
+    {"path": "$.mixed[5][1]", "type": "Numeric", "value": 2},
+    {"path": "$['weird\"key'][\"quoted'key\"]", "type": "String", "value": "special"}
+  ],
+  "sizes": [
+    {"path": "$.records", "size": 5},
+    {"path": "$.mixed", "size": 6},
+    {"path": "$.records[0].tags", "size": 2},
+    {"path": "$.records[1].tags", "size": 0},
+    {"path": "$.empty_obj", "size": 0},
+    {"path": "$.empty_arr", "size": 0}
+  ],
+  "missing": [
+    "$.records[3].discount",
+    "$.records[1].note",
+    "$.records[2].note",
+    "$.records[4].note",
+    "$.meta.absent"
+  ],
+  "nulls": [
+    "$.records[0].discount",
+    "$.records[2].discount",
+    "$.records[4].discount",
+    "$.mixed[2]"
+  ]
+}

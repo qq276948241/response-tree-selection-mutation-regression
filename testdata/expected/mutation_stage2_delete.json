@@ -1,0 +1,54 @@
+{
+  "status": "ok",
+  "request.id": "req-7f3a-2026",
+  "meta": {
+    "page": 2,
+    "per_page": 20,
+    "total": 5,
+    "shard_id": 9007199254740993,
+    "trace": "αβγ-日本語-🚀",
+    "greeting": "line1\nline2\t\"quoted\" \\backslash"
+  },
+  "records": [
+    {
+      "id": "REC-001",
+      "kind": "order",
+      "amount": 120.5,
+      "currency": "USD",
+      "tags": ["priority", "export"],
+      "customer": {"name": "Ada \"Ace\" Lovelace", "vip": true},
+      "discount": null,
+      "note": "已签收"
+    },
+    {
+      "id": "REC-003",
+      "kind": "refund",
+      "amount": 40,
+      "currency": "USD",
+      "tags": ["review"],
+      "customer": {"name": "Círó", "vip": true},
+      "discount": null
+    },
+    {
+      "id": "REC-004",
+      "kind": "order",
+      "amount": 210.75,
+      "currency": "USD",
+      "customer": {"name": "Dana", "vip": true},
+      "note": ""
+    },
+    {
+      "id": "REC-005",
+      "kind": "quote",
+      "amount": 999,
+      "currency": "JPY",
+      "tags": ["export", "review"],
+      "customer": {"name": "Émile", "vip": false},
+      "discount": null
+    }
+  ],
+  "mixed": [1, "two", null, true, {"nested.key": [1, 2, {"deep": "値"}]}, [1, 2]],
+  "weird\"key": {"quoted'key": "special"},
+  "empty_obj": {},
+  "empty_arr": []
+}

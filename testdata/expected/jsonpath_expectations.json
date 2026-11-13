@@ -1,0 +1,20 @@
+{
+  "queries": [
+    {"name": "recursive_ids", "query": "$..id", "expect": ["REC-001", "REC-002", "REC-003", "REC-004", "REC-005"]},
+    {"name": "filter_kind_order", "query": "$.records[?(@.kind == 'order')].id", "expect": ["REC-001", "REC-002", "REC-004"]},
+    {"name": "filter_amount_and_kind", "query": "$.records[?(@.amount >= 100 && @.kind == 'order')].id", "expect": ["REC-001", "REC-004"]},
+    {"name": "filter_nested_vip_order", "query": "$.records[?(@.customer.vip == true && @.kind == 'order')].id", "expect": ["REC-001", "REC-004"]},
+    {"name": "filter_explicit_null_discount", "query": "$.records[?(@.discount == null)].id", "expect": ["REC-001", "REC-003", "REC-005"]},
+    {"name": "filter_empty_note", "query": "$.records[?(@.note == '')].id", "expect": ["REC-004"]},
+    {"name": "filter_truthy_discount", "query": "$.records[?(@.discount)].id", "expect": ["REC-002"]},
+    {"name": "filter_missing_field", "query": "$.records[?(@.nonexistent > 1)].id", "expect": []},
+    {"name": "slice_range", "query": "$.records[1:4].id", "expect": ["REC-002", "REC-003", "REC-004"]},
+    {"name": "slice_step", "query": "$.records[::2].id", "expect": ["REC-001", "REC-003", "REC-005"]},
+    {"name": "slice_negative_start", "query": "$.records[-1:].id", "expect": ["REC-005"]},
+    {"name": "missing_path", "query": "$.missing.path", "expect": []},
+    {"name": "dotted_key", "query": "$['request.id']", "expect": ["req-7f3a-2026"]},
+    {"name": "quoted_keys", "query": "$['weird\"key'][\"quoted'key\"]", "expect": ["special"]},
+    {"name": "nested_dotted_key", "query": "$.mixed[4]['nested.key'][2].deep", "expect": ["値"]},
+    {"name": "recursive_deep", "query": "$..deep", "expect": ["値"]}
+  ]
+}
